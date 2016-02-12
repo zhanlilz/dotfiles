@@ -1,0 +1,3 @@
+# ignore the files inside the directory tmp which contains backup
+# files. However we still want to keep this directory here to sync.
+tmp/*
