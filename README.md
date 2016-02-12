@@ -1,2 +1,2 @@
 # dotfiles
-my dotfiles for linux
+my dotfiles in the home directory for linux
