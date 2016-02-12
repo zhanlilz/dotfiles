@@ -115,7 +115,7 @@ if ! shopt -oq posix; then
 fi
 
 # added by Anaconda 2.3.0 installer
-export PATH="/home/zhan/anaconda/bin:$PATH"
+# export PATH="/home/zhan/anaconda/bin:$PATH"
 
 # set environment variables for programs installed using the home
 # directory scheme and a separate and individual directories under the
