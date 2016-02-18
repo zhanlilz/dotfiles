@@ -4,14 +4,14 @@ my dotfiles in the home directory for linux
 
 ## installation
 
-_1. Clone the repo:__ 
+_1. Clone the repo: 
 
 $ git clone https://github.com/Woodstonelee/dotfiles.git
 
 _2. Edit .bash_custom/.program.config.sh to include any configuration
 of your own installed programs.
 
-_3. (Optional) install powerline-shell prompt
+_3. (Optional) install powerline-shell prompt__
 
 __3.1 Pull the submodules for powerline shell prompt: 
 $ cd .bash_custom/powerline-shell
