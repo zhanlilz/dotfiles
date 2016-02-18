@@ -9,6 +9,7 @@ $ git clone https://github.com/Woodstonelee/dotfiles.git
 2. Edit .bash_custom/.program.config.sh to include any configuration
 of your own installed programs.
 3. (Optional) install powerline-shell prompt
+
   3.1 Pull the submodules for powerline shell prompt: 
 $ cd .bash_custom/powerline-shell
 $ git submodule init
