@@ -1,0 +1,6 @@
+[submodule ".bash_custom/powerline-shell"]
+	path = .bash_custom/powerline-shell
+	url = https://github.com/milkbikis/powerline-shell.git
+[submodule ".bash_custom/powerline-fonts"]
+	path = .bash_custom/powerline-fonts
+	url = https://github.com/powerline/fonts
