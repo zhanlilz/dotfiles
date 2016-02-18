@@ -6,6 +6,7 @@ my dotfiles in the home directory for linux
 
 1. Clone the repo: 
 $ git clone https://github.com/Woodstonelee/dotfiles.git
+
 2. Edit .bash_custom/.program.config.sh to include any configuration
 of your own installed programs.
 3. (Optional) install powerline-shell prompt
