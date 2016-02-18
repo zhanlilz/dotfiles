@@ -4,7 +4,7 @@ my dotfiles in the home directory for linux
 
 ## installation
 
-_1. Clone the repo: 
+_1. Clone the repo:__ 
 
 $ git clone https://github.com/Woodstonelee/dotfiles.git
 
