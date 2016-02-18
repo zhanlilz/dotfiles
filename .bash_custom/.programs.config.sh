@@ -40,3 +40,17 @@ if [ -d "$HOME/include" ] ; then
 fi
 
 PRM_PATH="$HOME/Programs"
+
+# set up powerline shell prompt
+# steps:
+# 1. install powerline fonts from, https://github.com/Lokaltog/powerline-fonts
+# 2. install powerline shell prompt from, https://github.com/milkbikis/powerline-shell
+# 3. get the path to powerline-shell.py, correct the path in below and uncomment the following lines
+# -------------------------------
+# if [ "$TERM" != "linux" ]; then
+#     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+# fi
+# function _update_ps1() {
+#     PS1="$($HOME/Programs/powerline-shell/powerline-shell.py --mode compatible $? 2> /dev/null)"
+# }
+# -------------------------------

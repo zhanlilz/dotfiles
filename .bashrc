@@ -123,5 +123,3 @@ fi
 if [ -f "$HOME/.bash_custom/.programs.config.sh" ] ; then
     . "$HOME/.bash_custom/.programs.config.sh"
 fi
-
-source "$HOME/.homesick/repos/homeshick/homeshick.sh"
