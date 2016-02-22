@@ -60,20 +60,24 @@
 
 
 ;;; Install (m)elpa packages
-(require 'package)
-(setq package-archives '(("gnu"   . "http://elpa.gnu.org/packages/")
-                         ("melpa" . "http://melpa.org/packages/")))
-(defvar package-list
-  '(
-    flycheck
-    ))
-(package-initialize)
-(dolist (package package-list)
-  (unless (package-installed-p package)
-    (unless package-archive-contents (package-refresh-contents))
-    (package-install package)
-  )
-)
+;;;
+;; very incompatible with Emacs23 or earlier, even after install
+;; package.el in the elpa folder. Now disable it by default. 
+;; 
+;; (require 'package)
+;; (setq package-archives '(("gnu"   . "http://elpa.gnu.org/packages/")
+;;                          ("melpa" . "http://melpa.org/packages/")))
+;; (defvar package-list
+;;   '(
+;;     flycheck
+;;     ))
+;; (package-initialize)
+;; (dolist (package package-list)
+;;   (unless (package-installed-p package)
+;;     (unless package-archive-contents (package-refresh-contents))
+;;     (package-install package)
+;;   )
+;; )
 
 
 ;;; Load packages
