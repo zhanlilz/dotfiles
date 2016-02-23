@@ -117,9 +117,28 @@ fi
 # added by Anaconda 2.3.0 installer
 # export PATH="/home/zhan/anaconda/bin:$PATH"
 
-# set environment variables for programs installed using the home
-# directory scheme and a separate and individual directories under the
-# folder ~/Programs.
-if [ -f "$HOME/.bash_custom/.programs.config.sh" ] ; then
-    . "$HOME/.bash_custom/.programs.config.sh"
-fi
+# !!! the shell prompt setup should always be in this .bashrc file !!!
+# !!! so that interactive shell via qsh can inherit the prompt !
+# 
+# set up powerline shell prompt steps:
+# 
+# 1. install powerline fonts
+# from, https://github.com/Lokaltog/powerline-fonts. The installation
+# is also included in this dotfiles repo as a submodule under
+# .bash_custom/powerline-shell 
+# 
+# 2. install powerline shell prompt from,
+# https://github.com/milkbikis/powerline-shell. The installation is
+# also included in this dotfiles repo as a submodule under
+# .bash_custom/powerline-fonts 
+# 
+# 3. get the path to powerline-shell.py,
+# correct the path in below and uncomment the following lines
+# -------------------------------
+# if [ "$TERM" != "linux" ]; then
+#     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+# fi
+# function _update_ps1() {
+#     PS1="$($HOME/.bash_custom/powerline-shell/powerline-shell.py --mode compatible $? 2> /dev/null)"
+# }
+# # -------------------------------

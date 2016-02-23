@@ -15,3 +15,17 @@ if [ -n "$BASH_VERSION" ]; then
 	. "$HOME/.bashrc"
     fi
 fi
+
+# set environment variables for programs installed using the home
+# directory scheme and a separate and individual directories under the
+# folder ~/Programs.
+# 
+# !!! This is better to be put in this .profile rather than .bashrc
+# !!! because the grid scheduler such as qsh or qsub will re-source
+# !!! .bashrc again but will not do .profile when you add -V to 
+# !!! inherit the environmental variables. If .bashrc is re-sourced
+# !!! again and the following is in it, the sequence of directories 
+# !!! in the PATH could be messed up. 
+if [ -f "$HOME/.bash_custom/.programs.config.sh" ] ; then
+    . "$HOME/.bash_custom/.programs.config.sh"
+fi
