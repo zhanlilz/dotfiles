@@ -6,18 +6,19 @@ alias emacs='emacsclient -nw --alternate-editor="" -c'
 
 function ssh()
 {
-  case "$@" in
+  n=${#}
+  case ${@: -1} in
     "neponset")
-      command ssh -AY zhan.li@neponset.eeos.umb.edu
+      command ssh ${@:1:$((n-1))} zhan.li@neponset.eeos.umb.edu
       ;;
     "mystic")
-      command ssh -AY zhan.li@mystic.eeos.umb.edu
+      command ssh ${@:1:$((n-1))} zhan.li@mystic.eeos.umb.edu
       ;;
     "charles")
-      command ssh -AY zhan.li@charles.umb.edu
+      command ssh ${@:1:$((n-1))} zhan.li@charles.umb.edu
       ;;
     "ghpcc06")
-      command ssh -AY zl69b@ghpcc06.umassrc.org
+      command ssh ${@:1:$((n-1))} zl69b@ghpcc06.umassrc.org
       ;;
     *)
       command ssh "$@"
