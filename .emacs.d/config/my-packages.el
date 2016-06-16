@@ -7,7 +7,6 @@
 
 ;;; Code:
 
-
 ;;;; From packages dir
 
 ;; (require 'undo-tree)
@@ -18,8 +17,10 @@
 
 ;; (require 'bongo)
 
-
 ;;;; (M)Elpa pachages
+
+;; set markdown-command for markdown-mode and markdown-preview-mode
+;; (setq markdown-command "python -m markdown -o 'html5' -x markdown.extensions.codehilite -x markdown.extensions.toc")
 
 ;; (require 'magit)
 

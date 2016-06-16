@@ -34,11 +34,13 @@
 ;;; set load directories
 (defvar config-dir
  (expand-file-name "config" user-emacs-directory))
+(add-to-list 'load-path config-dir)
 (defvar elisp-dir
  (expand-file-name "elisp" user-emacs-directory))
-(add-to-list 'load-path config-dir)
 (add-to-list 'load-path elisp-dir)
-
+(defvar elpa-dir
+ (expand-file-name "elpa" user-emacs-directory))
+(add-to-list 'load-path elpa-dir)
 
 ;; Packages
 (defvar packages-dir
@@ -60,24 +62,27 @@
 
 
 ;;; Install (m)elpa packages
-;;;
-;; very incompatible with Emacs23 or earlier, even after install
-;; package.el in the elpa folder. Now disable it by default. 
-;; 
-;; (require 'package)
-;; (setq package-archives '(("gnu"   . "http://elpa.gnu.org/packages/")
-;;                          ("melpa" . "http://melpa.org/packages/")))
-;; (defvar package-list
-;;   '(
-;;     flycheck
-;;     ))
-;; (package-initialize)
-;; (dolist (package package-list)
-;;   (unless (package-installed-p package)
-;;     (unless package-archive-contents (package-refresh-contents))
-;;     (package-install package)
-;;   )
-;; )
+(require 'package)
+(setq package-archives '(("melpa-stable" . "https://stable.melpa.org/packages/")
+                         ("gnu"   . "http://elpa.gnu.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")
+                        )
+)
+(defvar package-list
+  '(
+;;    flycheck
+;;    markdown-preview-mode
+;;    websocket
+;;    markdown-mode
+;;    cl-lib
+    ))
+(package-initialize)
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (unless package-archive-contents (package-refresh-contents))
+    (package-install package)
+  )
+)
 
 
 ;;; Load packages
