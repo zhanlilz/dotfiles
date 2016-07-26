@@ -40,3 +40,6 @@ if [ -d "$HOME/include" ] ; then
 fi
 
 PRM_PATH="$HOME/Programs"
+
+# added by Anaconda 2.3.0 installer
+# export PATH="/home/zhan/anaconda/bin:$PATH"
