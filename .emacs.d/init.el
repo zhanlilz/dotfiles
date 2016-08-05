@@ -29,7 +29,7 @@
  ;; custom config init files
  custom-file
  (expand-file-name "config/my-custom.el" user-emacs-directory))
-
+(load custom-file)
 
 ;;; set load directories
 (defvar config-dir
