@@ -1,3 +1,0 @@
-# make git track this folder "package" but ignore all the files in this folder
-*
-!.gitignore
