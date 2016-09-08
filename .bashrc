@@ -114,6 +114,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# if there is a X resources file, load it.
+if [ -f ~/.Xresources ]; then
+    xrdb ~/.Xresources
+fi
+
 # !!! the shell prompt setup should always be in this .bashrc file !!!
 # !!! so that interactive shell via qsh can inherit the prompt !
 # 

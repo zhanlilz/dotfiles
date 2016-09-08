@@ -12,14 +12,21 @@
 
 (defvar my-theme-dir
  (expand-file-name "config/themes/emacs-colors-solarized" user-emacs-directory))
-(add-to-list 'custom-theme-load-path my-theme-dir)
-(load-theme 'solarized t)
-(add-hook 'after-make-frame-functions
-          (lambda (frame)
-            (let ((mode (if (display-graphic-p frame) 'light 'dark)))
-              (set-frame-parameter frame 'background-mode mode)
-              (set-terminal-parameter frame 'background-mode mode))
-                        (enable-theme 'solarized)))
+(if (version< emacs-version "24")
+    `(progn
+       (add-to-list 'load-path my-theme-dir)
+       (require 'color-theme-solarized)
+       (color-theme-solarized))
+  `(progn
+     (add-to-list 'custom-theme-load-path my-theme-dir)
+     (load-theme 'solarized t)))
+;; (add-hook 'after-make-frame-functions
+;;           (lambda (frame)
+;;             (let ((mode (if (display-graphic-p frame) 'light 'dark)))
+;;               (set-frame-parameter frame 'background-mode mode)
+;;               (set-terminal-parameter frame 'background-mode mode))
+;;                         (enable-theme 'solarized)))
+
 ;; (load-theme 'quasi-monochrome t)
 ;; (load-theme 'my t)
 
