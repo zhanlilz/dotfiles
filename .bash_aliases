@@ -3,6 +3,7 @@
 
 alias rm='rm -i'
 alias emacs='emacsclient -nw --alternate-editor="" -c'
+alias matlab_cmd='matlab -nojvm -nodisplay -nosplash'
 
 function ssh()
 {
