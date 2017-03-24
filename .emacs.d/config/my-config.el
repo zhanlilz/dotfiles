@@ -56,6 +56,9 @@
 (icomplete-mode 1)
 ;; (subword-mode 1)
 
+;; disable auto indentation
+(when (fboundp 'electric-indent-mode) (electric-indent-mode -1))
+
 ;;;;;;;;;;;;;;;;;;;;
 ;;; set up unicode
 ;;(prefer-coding-system       'utf-8)
