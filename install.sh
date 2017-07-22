@@ -48,3 +48,5 @@ if [[ -d $HOME/.emacs.d ]]; then
     cp -r .emacs.d $HOME/
     echo "copied .emacs.d folder"
 fi
+
+echo "Now open .bashrc and follow the instruction in the end to finish the installation of power shell!"
