@@ -49,4 +49,6 @@ if [[ -d $HOME/.emacs.d ]]; then
     echo "copied .emacs.d folder"
 fi
 
-echo "Now open .bashrc and follow the instruction in the end to finish the installation of power shell!"
+echo "Now 2 more tasks before the installation completes"
+echo "1. Go to .bash_custom/.programs.config.sh and fix environment variable PATH for the Anaconda!"
+echo "2. Open .bashrc and follow the instruction in the end to finish the installation of power shell!"
