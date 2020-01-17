@@ -1,3 +1,5 @@
 [user]
 	email = zhanli1986@gmail.com
 	name = Zhan Li
+[core]
+        editor = vi
