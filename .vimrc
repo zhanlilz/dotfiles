@@ -16,6 +16,12 @@ set number
 " Auto indentation
 syntax on
 filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
 
 " Fix block cursor in normal mode and vertical line cursor in insert mode
 let &t_ti.="\e[1 q"
