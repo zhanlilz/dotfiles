@@ -31,4 +31,5 @@ if [ -f "$HOME/.bash_custom/.programs.config.sh" ] ; then
 fi
 
 # set some environmental variables for bash
-export EDITOR="emacsclient -nw --alternate-editor="" -c"
+# export EDITOR="emacsclient -nw --alternate-editor="" -c"
+export EDITOR="vi"
