@@ -17,24 +17,27 @@ alias rm='rm -i'
 # 
 # Before starting `zhan-start-work`, install inotify-tools on the local computer. 
 function zhan-start-work () {
+        local rsync_opts=${@}
         local root_dir="/my/projects-scripting/dir/on/local"
         while inotifywait -r -e modify,create,delete,move \
-                --exclude '.*/runtime' \
+                --exclude "\..*\.(swp|swx)" \
                 ${root_dir}; do
-           rsync -rltvP \
+           rsync ${@} -rltvP \
                    --perms --chmod=ugo+r,Dug+w,Duo+x,Dg+s,Fug+w,Fugo-x \
                    --delete -m \
                    --filter '- runtime/' \
                    --filter '- .ipynb_checkpoints/' \
+                   --filter '- .*' \
                    --filter '+,s */' \
                    --filter '+ scripts/**' \
                    --filter '- *' \
                    ${root_dir}/ server1:/my/projects/dir/on/remote1
-           rsync -rltvP \
+           rsync ${@} -rltvP \
                    --perms --chmod=ugo+r,Dug+w,Duo+x,Dg+s,Fug+w,Fugo-x \
                    --delete -m \
                    --filter '- runtime/' \
                    --filter '- .ipynb_checkpoints/' \
+                   --filter '- .*' \
                    --filter '+,s */' \
                    --filter '+ scripts/**' \
                    --filter '- *' \
