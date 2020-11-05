@@ -17,11 +17,23 @@ alias rm='rm -i'
 # 
 # Before starting `zhan-start-work`, install inotify-tools on the local computer. 
 function zhan-start-work () {
+    local rsync_opts=${@}
+    local root_dir="/my/projects-scripting/dir/on/local"
+    read -d '' USAGE <<EOF
+    Your local working directory: 
+        ${root_dir}
+    Your remote working directory: 
+        username@server1:/my/projects/dir/on/remote1
+        username@server2:/my/projects/dir/on/remote2
+EOF
     # Kill existing inotifywait
     cur_events=$(ps -u $(whoami) -A | grep inotifywait)
     if [[ ! -z ${cur_events} ]]; then
-        echo "You have the following running inotifywait events."
+        echo "You have the following running inotifywait event."
         ps -u $(whoami) -A | grep inotifywait
+        
+        echo "Info about this running inotifywait event, "
+        echo "${USAGE}"
         
         echo "Would you like to terminate them before start this new one? (Y/n)"
         read YN
@@ -33,13 +45,7 @@ function zhan-start-work () {
             return 1
         fi
     fi
-    local rsync_opts=${@}
-    local root_dir="/my/projects-scripting/dir/on/local"
-    echo "Your local working directory: "
-    echo "    ${root_dir}"
-    echo "Your remote working directory: "
-    echo "    username@server1:/my/projects/dir/on/remote1"
-    echo "    username@server2:/my/projects/dir/on/remote2"
+    echo "${USAGE}"
     while inotifywait -r -e modify,create,delete,move \
         --exclude "\..*\.(swp|swx)" \
         --exclude ".*\.ipynb" \
