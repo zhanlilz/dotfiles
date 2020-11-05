@@ -29,10 +29,17 @@ function zhan-start-work () {
             # to kill
             echo "Killing the existing inotifyevent"
             pkill inotifywait
+        else
+            return 1
         fi
     fi
     local rsync_opts=${@}
     local root_dir="/my/projects-scripting/dir/on/local"
+    echo "Your local working directory: "
+    echo "    ${root_dir}"
+    echo "Your remote working directory: "
+    echo "    username@server1:/my/projects/dir/on/remote1"
+    echo "    username@server2:/my/projects/dir/on/remote2"
     while inotifywait -r -e modify,create,delete,move \
         --exclude "\..*\.(swp|swx)" \
         --exclude ".*\.ipynb" \
@@ -47,7 +54,7 @@ function zhan-start-work () {
            --filter '+,s */' \
            --filter '+ scripts/**' \
            --filter '- *' \
-           ${root_dir}/ server1:/my/projects/dir/on/remote1
+           ${root_dir}/ username@server1:/my/projects/dir/on/remote1
        rsync ${@} -rltvP \
            --perms --chmod=ugo+r,Dug+w,Duo+x,Dg+s,Fug+w,Fugo-x \
            --delete -m \
@@ -58,7 +65,7 @@ function zhan-start-work () {
            --filter '+,s */' \
            --filter '+ scripts/**' \
            --filter '- *' \
-           ${root_dir}/ server2:/my/projects/dir/on/remote2
+           ${root_dir}/ username@server2:/my/projects/dir/on/remote2
     done
 }
 alias zhan-start-work='zhan-start-work'
