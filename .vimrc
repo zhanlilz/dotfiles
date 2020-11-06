@@ -10,6 +10,9 @@ map <Esc><Esc> :w<CR>
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
+" The above highlighting may fail. If you have Vim 7.3+, it is easier to use
+:set colorcolumn=81
+
 " Show line numbers
 set number
 
