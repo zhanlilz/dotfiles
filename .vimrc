@@ -2,7 +2,8 @@ set nocompatible
 set backspace=2
 set whichwrap+=<,>,[,]
 
-map <Esc><Esc> :w<CR>
+" Map <space> key in normal mode to update command for saving changed files.
+nnoremap <space> :update<CR>
 
 " This highlights the background in a subtle red for text that goes over the
 " 80 column limit (subtle in GUI mode, anyway - in terminal mode it's less so).
